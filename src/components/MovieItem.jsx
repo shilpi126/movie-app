@@ -1,8 +1,14 @@
 import React from 'react'
 
-function MovieItem() {
+function MovieItem({title, image,id}) {
   return (
-    <div>MovieItem</div>
+    <div key={id}>
+        
+        <img src={image} alt='movie image' className='h-24 w-44'/>
+        
+
+        <h1 className='text-center text-lg '>{title}</h1>
+    </div>
   )
 }
 
