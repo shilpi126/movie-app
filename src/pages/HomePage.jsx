@@ -4,10 +4,10 @@ import MovieList from '../components/MovieList'
 
 function HomePage() {
   return (
-    <>
+    <div className='bg-slate-500 h-screen '>
     <Navbar/>
     <MovieList/>
-    </>
+    </div>
   )
 }
 
