@@ -31,7 +31,9 @@ function MovieList() {
  
      <div className='flex flex-wrap justify-center m-12 '>
     {movieData?.map((movie) => (
-            <div className=" h-40 w-64 cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">
+            <div className=" h-40 w-64 cursor-pointer sm:p-3 :hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 
+            p-1 hover:shadow-slate-400 shadow-md border border-slate-400 m-2
+            transition-shadow duration-200 group">
             <MovieItem
             id={movie.show.id}
             title={movie.show.name}
