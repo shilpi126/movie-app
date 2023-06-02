@@ -32,24 +32,26 @@ console.log('====================================');
 
   return (
 
-        <div  className='flex justify-center items-center h-screen w-screen bg-slate-500' >
-        <div className='h-5/6 w-8/12 bg-slate-500 flex justify-center items-center  rounded-2xl   cursor-pointer 
-        sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md sm:border sm:border-slate-400 sm:m-2  
-        p-1 hover:shadow-slate-400 shadow-md border border-slate-400 m-2
-        transition-shadow duration-200 group'>
-        {/* <img src={singleMovie.image.medium} alt='movie image' className='h-60 w-80 pr-4 pl-4'/> */}
-        <div className='p-6'>
-              <h1 className='text-2xl  text-gray-300 mb-2  '>{singleMovie.name}</h1>
-              <p className='text-md  text-gray-300 '>{singleMovie.summary}</p>
-              <h4 className='text-xl  text-gray-300 '>{singleMovie.genres}</h4>
-              <h4 className='text-xl text-gray-300 mb-6 '>{singleMovie.language}</h4>
-        <Link to={`/booking/${singleMovie.id}`}>
-        <button  className='h-12 w-48 rounded-lg text-xl text-slate-300 bg-amber-600 hover:bg-slate-400 hover:text-amber-500'>Book Show</button>
+        <div  className='flex justify-center items-center h-screen w-full  m-4 p-2' >
+        <div className=' xl:w-7/12 h-auto w-full  rounded-2xl   cursor-pointer 
+        sm:p-3 sm:hover:shadow-slate-600 sm:shadow-xl sm:border sm:border-slate-400 sm:m-1  
+        p-1 hover:shadow-slate-600 shadow-xl border border-slate-400 
+        transition-transform duration-200 '>
+        <img src={singleMovie.image?.original} className='h-72 w-full rounded-2xl p-2'/>
+        <div className='p-2'>
+              <h1 className='text-2xl  text-gray-800   '>{singleMovie.name}</h1>
+              <div className='text-md  text-gray-600  '>{singleMovie.summary}</div>
+
+              <h4 className='text-lg text-gray-800 '>{singleMovie.language}</h4>
+      </div>
+       <div className='flex justify-center'>
+       <Link to="/" className='flex  justify-center'>
+        <button  className='h-10 w-40 mb-2 mr-4 rounded-lg text-xl text-slate-300 bg-gray-600 hover:bg-slate-400 hover:text-gray-800'>Go To Home</button>
         </Link>
-
-
-
-    </div>
+        <Link to={`/booking/${singleMovie.id}`} className='flex  justify-center'>
+        <button  className='h-10 w-40 mb-2 rounded-lg text-xl text-slate-300 bg-gray-600 hover:bg-slate-400 hover:text-gray-800'>Book Show</button>
+        </Link>
+       </div>
   </div>
 </div>
 

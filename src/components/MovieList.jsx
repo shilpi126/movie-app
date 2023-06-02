@@ -9,8 +9,8 @@ function MovieList() {
 
     useEffect(() => {
         async function getData (){
-            const response = await axios.get("https://api.tvmaze.com/search/shows?q=all")
-            //console.log(response.data);
+            const response = await axios.get("https://api.tvmaze.com/shows")
+            
             setMovieData(response.data)
         }
 
@@ -29,20 +29,21 @@ function MovieList() {
   return (
 
  
-     <div className='flex flex-wrap justify-center m-12 '>
+     <div className='flex flex-wrap justify-center   '>
     {movieData?.map((movie) => (
-            <div className=" h-40 w-64 cursor-pointer sm:p-3 :hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 
-            p-1 hover:shadow-slate-400 shadow-md border border-slate-400 m-2
-            transition-shadow duration-200 group">
+            <div className=" h-80 w-64 m-4 cursor-pointer sm:p-3 :hover:shadow-slate-600 sm:shadow-xl rounded-lg sm:border sm:border-slate-400 sm:m-4 hover:scale-105 
+            p-1 hover:shadow-slate-600 shadow-md border border-slate-400 
+            transition-transform duration-200 group">
             <MovieItem
-            id={movie.show.id}
-            title={movie.show.name}
-            rating={movie.show.rating}
-            genre={movie.show.genres[0]}
+            id={movie.id}
+            title={movie.name}
+            rating={movie.rating.average}
+            genre={movie.genres[0]}
+            image={movie.image.original}
             />
-          
-            <Link to={`/moviesummary/${movie.show.id}`}>   
-            <button className='bg-amber-600 h-8 w-44 ml-6 rounded-md  mt-6 text-gray-200 text-lg text-center hover:bg-slate-300 hover:text-amber-600'>Summary</button>
+            
+            <Link to={`/moviesummary/${movie.id}`} className='flex justify-center'>   
+            <button className='bg-slate-600 h-8 w-40  rounded-md  mt-2  text-gray-200 text-lg text-center hover:bg-slate-400 hover:text-gray-800'>Summary</button>
             </Link>
             
 

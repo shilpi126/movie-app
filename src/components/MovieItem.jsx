@@ -2,14 +2,13 @@ import React from 'react'
 
 function MovieItem({title, image,id, rating,genre}) {
   return (
-    <div key={id}>
-        
-        {/* <img src={image} alt='movie image' className='h-24 w-44'/> */}
-        
+    <div key={id}  >
 
-        <h1 className='text-center text-2xl mb-2  text-slate-200'>{title}</h1>
-        <h4 className='text-center text-lg mb-1 text-slate-200'>{genre}</h4>
-
+        
+        <img src={image} alt='movie image' className='h-40 w-full  rounded-lg'/>
+        <h1 className='text-center text-xl   text-gray-600'>{title}</h1>
+        <h4 className='text-center text-lg  text-slate-600'>{genre}</h4>
+        <h3 className='text-center text-lg  text-amber-600'>{rating}</h3>
     </div>
   )
 }
